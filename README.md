@@ -40,6 +40,7 @@ Parameter | Explanation
 
 ```powershell
 .\Audit-ADComputers.ps1 -daysSinceLogin 180 -ping -excludeOU "OU=TestOU,DC=example,DC=com"
+```
 
 ### Update-ADObjectHelper.ps1
 
