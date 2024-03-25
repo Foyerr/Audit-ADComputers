@@ -3,7 +3,6 @@
 ## Components
 
 - **Audit-ADComputers.ps1**: Audits old computer objects based on their last login timestamp and other criteria.
-- **Remove-DormantComputerObject.ps1**: Removes or disables dormant computer objects identified by the audit script.
 - **Update-ADObjectHelper.ps1**: Provides functionalities to update computer objects in Active Directory, including renaming, moving, and appending messages to objects.
 
 ## Purpose
@@ -16,7 +15,7 @@ This toolkit helps maintain an organized and secure Active Directory environment
 
 ## Prerequisites
 
-- PowerShell 5.1 or higher.
+- PowerShell 5.1
 - Active Directory module for PowerShell.
 - Appropriate permissions to view and modify computer objects in Active Directory.
 
