@@ -30,6 +30,7 @@
             LastLogonDate = $computer.LastLogonDate
             Enabled      = $computer.Enabled
             LastLogonTimeStamp = [DateTime]::FromFileTime($computer.LastLogonTimeStamp)
+            DistinguishedName = $computer.DistinguishedName
         }
 
         if ($ping) {
@@ -57,7 +58,7 @@
 }
 
 
-
-$oldComputers = Audit-OldComputers -daysSinceLogin (90) -ping -excludeOU "" -filter '(OperatingSystem -notlike "*Server*") -and (OperatingSystem -like "*Windows*")' -computerGroups "Administrators","RemoteUsers"
+#example
+#oldComputers = Audit-OldComputers -daysSinceLogin (90) -ping -excludeOU "" -filter '(OperatingSystem -notlike "*Server*") -and (OperatingSystem -like "*Windows*")' -computerGroups "Administrators","RemoteUsers"
 
 

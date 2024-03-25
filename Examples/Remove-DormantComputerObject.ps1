@@ -21,7 +21,7 @@ $oldComputers | Export-Csv -path ".\Get-OldComputers-$($date).csv" -NoTypeInform
 $updateErrorLogPath=".\Update-ADObjectHelper.err"
 foreach ($computer in $oldComputers){
     
-    $results = Update-ADObjectHelper -Identity $(Get-ADComputer $computer.Name).DistinguishedName -Remove -errorLogPath $updateErrorLogPath
+    $results = Update-ADObjectHelper -Identity $computer.DistinguishedName -Remove -errorLogPath $updateErrorLogPath
     $removedComputerTotal    += $results.removed
     #$disabledTotal           += $results.Disabled
     #$adMessageTotal          += $results.adMessage 
@@ -29,7 +29,7 @@ foreach ($computer in $oldComputers){
     #$movedTotal              += $results.Moved    
     
     #If the computer returns with an admin/Remote group - attempt to remove it and add it to the group removed total
-    if($computer.AdminGroup){
+    if($computer.Administrators){
         $removedGroupTotal    += (Update-ADObjectHelper -Identity $(Get-ADGroup "$($computer.Name) Administrators").DistinguishedName -Remove -errorLogPath $updateErrorLogPath).Removed
     }
 
