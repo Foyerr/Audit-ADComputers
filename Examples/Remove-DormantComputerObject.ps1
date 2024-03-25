@@ -1,5 +1,5 @@
-Import-Module ".\Audit-ADComputers.ps1"
-Import-Module ".\Update-ADObjectHelper.ps1"
+Import-Module "..\Audit-ADComputers.ps1"
+Import-Module "..\Update-ADObjectHelper.ps1"
 
 
 $removedComputerTotal  = 0
