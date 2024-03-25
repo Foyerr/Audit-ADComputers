@@ -1,4 +1,20 @@
-﻿function Audit-OldComputers([int]$daysSinceLogin, [switch]$ping = $false, [string]$excludeOU, [string]$filter, [array]$computerGroups) {
+﻿
+function Audit-OldComputers {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [int]$daysSinceLogin,
+
+        [switch]$ping = $false,
+
+        [Parameter(Mandatory=$false)]
+	    [ValidatePattern("^(OU\=.*,\DC\=.*)$")]
+        [string]$excludeOU,
+
+        [string]$filter,
+
+        [array]$computerGroups
+    )
 
     $i=0
 
