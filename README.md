@@ -1,6 +1,4 @@
-# Active Directory Computer Object Management Toolkit
-
-This toolkit consists of PowerShell scripts designed to help system administrators audit, update, and clean up computer objects in Active Directory. The toolkit aims to enhance the efficiency and accuracy of managing computer accounts, especially those that are outdated, no longer in use, or need updates to their AD attributes.
+# Active Directory Computer Object Audit
 
 ## Components
 
