@@ -40,3 +40,23 @@ Parameter | Explanation
 
 ```powershell
 .\Audit-ADComputers.ps1 -daysSinceLogin 180 -ping -excludeOU "OU=TestOU,DC=example,DC=com"
+
+### Update-ADObjectHelper.ps1
+
+**Parameters:**
+
+Parameter | Explanation
+--------- | -----------
+`-Identity` | Specifies the identity of the AD object to update. This is mandatory.
+`-NewName` | Specifies the new name for the AD object. Optional.
+`-AdMessage` | Appends a message to the 'info' attribute of the AD object. Optional.
+`-TargetPath` | Specifies the OU to move the AD object to. This should be in 'OU=example,DC=domain,DC=com' format. Optional.
+`-remove` | If specified, removes the AD object. This is a switch parameter and is optional.
+`-disable` | If specified, disables the AD object. This is a switch parameter and is optional.
+`-errorLogPath` | Specifies the path to the error log file where errors will be logged if they occur. Optional.
+
+**Example:**
+
+```powershell
+.\Update-ADObjectHelper.ps1 -Identity "CN=OldComputer01,OU=OldComputers,DC=example,DC=com" -NewName "NewComputer01" -TargetPath "OU=Computers,DC=example,DC=com" -AdMessage "Moved to new OU" -errorLogPath "C:\Logs\UpdateErrors.log"
+
